@@ -67,6 +67,13 @@ An AI-powered multi-agent conversational banking system built with **LangGraph**
 - Human escalation for high-risk transactions
 - Full audit trail logging
 
+✅ **Enterprise Authentication**
+- JWT/OAuth2 authentication with token rotation
+- Role-based access control (RBAC) with scopes
+- Secure password hashing with argon2
+- User registration, login, and profile management
+- Access token (30 min) and refresh token (7 days) lifecycle
+
 ✅ **User Experience**
 - Interactive chat interface
 - Session management
@@ -201,11 +208,42 @@ curl -X POST http://localhost:8101/tools/get_balance \
   -d '{"account_id": "ACC435073"}'
 ```
 
-### Test Query Processing
+### Authentication
+
+All API endpoints require JWT authentication. Follow these steps:
+
+```bash
+# 1. Register a new user
+curl -X POST "http://localhost:8080/auth/register" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "username": "testuser",
+    "full_name": "Test User",
+    "password": "SecurePassword123!"
+  }'
+
+# 2. Login to get tokens
+LOGIN=$(curl -s -X POST "http://localhost:8080/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "password": "SecurePassword123!"
+  }')
+
+ACCESS_TOKEN=$(echo $LOGIN | jq -r '.access_token')
+
+# 3. Use token to access protected endpoints
+curl -X GET "http://localhost:8080/customers" \
+  -H "Authorization: Bearer $ACCESS_TOKEN"
+```
+
+### Test Query Processing (with Authentication)
 
 ```bash
 # Send a banking query
 curl -X POST http://localhost:8080/query \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "session_id": "test-session-001",
@@ -217,10 +255,11 @@ curl -X POST http://localhost:8080/query \
 ### Test Frontend
 
 1. Open http://localhost:5173 in your browser
-2. Select a customer from the dropdown
-3. Type a query (e.g., "Show me my accounts")
-4. View the response and agent outputs
-5. Check the Audit Trail for execution details
+2. Register or login with your credentials
+3. Select a customer from the dropdown
+4. Type a query (e.g., "Show me my accounts")
+5. View the response and agent outputs
+6. Check the Audit Trail for execution details
 
 ### Run Unit Tests
 
@@ -228,12 +267,34 @@ curl -X POST http://localhost:8080/query \
 # Run all tests
 pytest tests/ -v
 
+# Run authentication tests
+pytest tests/test_auth.py -v
+
 # Run specific test file
 pytest tests/test_core_banking_mcp.py -v
 
 # Run with coverage report
 pytest tests/ --cov=src --cov-report=html
 ```
+
+## 🔐 Authentication Details
+
+FinCore uses **JWT/OAuth2** for secure API access:
+
+- **Registration:** Create new user accounts with email and password
+- **Login:** Obtain access token (30 min) and refresh token (7 days)
+- **Token Refresh:** Get new access token without re-entering credentials
+- **Scopes:** Role-based access control (read, write, admin, audit)
+- **Password Hashing:** Argon2 for secure password storage
+
+For complete authentication documentation, see [AUTH_GUIDE.md](AUTH_GUIDE.md)
+
+**Quick Login in Swagger UI:**
+1. Go to http://localhost:8080/docs
+2. Click "Authorize" button (top right)
+3. Use the "Login for access" endpoint
+4. Enter credentials and get token
+5. All subsequent requests will include the token
 
 ## 📊 Project Structure
 

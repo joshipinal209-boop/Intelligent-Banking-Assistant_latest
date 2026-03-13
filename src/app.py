@@ -2,14 +2,20 @@ import os
 import uuid
 import json
 from typing import Optional, Dict, Any, List
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from graph.main_graph import app as graph_app
 from graph.audit import audit_store
+from auth import router as auth_router, get_current_user
+from auth.models import User
 
 # Initialize FastAPI app
-app = FastAPI(title="FinCore Intelligent Banking Assistant API")
+app = FastAPI(
+    title="FinCore Intelligent Banking Assistant API",
+    description="AI-powered multi-agent banking system with JWT authentication",
+    version="1.0.0"
+)
 
 # Add CORS middleware
 app.add_middleware(
@@ -19,6 +25,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include authentication routes
+app.include_router(auth_router)
 
 # --- Pydantic Models ---
 
@@ -38,9 +47,10 @@ class QueryResponse(BaseModel):
     latency_ms: Optional[float] = None
 
 @app.get("/customers")
-async def get_customers():
+async def get_customers(current_user: User = Depends(get_current_user)):
     """
     Returns a list of all synthetic customers for the dropdown.
+    Requires: Authentication (read scope)
     """
     path = "data/seed/mcp/core_banking.json"
     if os.path.exists(path):
@@ -52,10 +62,11 @@ async def get_customers():
 # --- API Endpoints ---
 
 @app.post("/query", response_model=QueryResponse)
-async def process_query(request: QueryRequest):
+async def process_query(request: QueryRequest, current_user: User = Depends(get_current_user)):
     """
     Exposes the LangGraph banking assistant workflow.
     Handles session persistence and human-in-the-loop escalation.
+    Requires: Authentication (write scope)
     """
     config = {"configurable": {"thread_id": request.session_id}}
     
@@ -98,9 +109,10 @@ async def process_query(request: QueryRequest):
         raise HTTPException(status_code=500, detail=f"Workflow execution failed: {str(e)}")
 
 @app.get("/audit/{session_id}")
-async def get_audit_trail(session_id: str):
+async def get_audit_trail(session_id: str, current_user: User = Depends(get_current_user)):
     """
     Retrieves the full audit trail for a given session/thread.
+    Requires: Authentication (read or audit scope)
     """
     try:
         trail = audit_store.get_audit_trail(session_id)
@@ -114,9 +126,10 @@ async def get_audit_trail(session_id: str):
         raise HTTPException(status_code=500, detail=f"Failed to retrieve audit trail: {str(e)}")
 
 @app.get("/metrics")
-async def get_metrics():
+async def get_metrics(current_user: User = Depends(get_current_user)):
     """
     Returns aggregated P50 and P90 latency metrics per node and overall.
+    Requires: Authentication (admin scope)
     """
     import numpy as np
     
@@ -158,9 +171,10 @@ async def get_metrics():
         raise HTTPException(status_code=500, detail=f"Failed to calculate metrics: {str(e)}")
 
 @app.get("/audit/export")
-async def export_audit():
+async def export_audit(current_user: User = Depends(get_current_user)):
     """
     Streams the entire audit trail in JSONL format.
+    Requires: Authentication (admin scope)
     """
     from fastapi.responses import StreamingResponse
     
