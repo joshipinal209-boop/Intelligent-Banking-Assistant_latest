@@ -9,6 +9,7 @@ from graph.main_graph import app as graph_app
 from graph.audit import audit_store
 from auth import router as auth_router, get_current_user
 from auth.models import User
+from config.llm_fallback import llm_fallback
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -105,7 +106,56 @@ async def process_query(request: QueryRequest, current_user: User = Depends(get_
     except HTTPException:
         raise
     except Exception as e:
+        error_str = str(e)
         print(f"ERROR: process_query failed: {e}")
+        
+        # Check if it's an API key permission error
+        if "PERMISSION_DENIED" in error_str or "leaked" in error_str.lower():
+            # Use fallback mode
+            fallback_error = llm_fallback.handle_permission_error(error_str)
+            
+            # Determine query type for fallback data
+            query_lower = request.query.lower()
+            if "balance" in query_lower or "account" in query_lower:
+                fallback_data = llm_fallback.get_fallback_account_balance(request.customer_id or "fa800b9e")
+                response_text = llm_fallback.format_response(fallback_data, "balance")
+            elif "transaction" in query_lower or "history" in query_lower:
+                fallback_data = llm_fallback.get_fallback_transactions(request.customer_id or "fa800b9e")
+                response_text = llm_fallback.format_response(fallback_data, "transactions")
+            else:
+                response_text = f"""
+⚠️ **LLM Service Temporarily Unavailable**
+
+{fallback_error['message']}
+
+**What to do:**
+1. Visit: {fallback_error['instructions']['step_1'].split(': ')[1]}
+2. Create a new API key
+3. Update .env: GOOGLE_API_KEY=your_new_key
+4. Restart the application
+
+The rest of the system is working normally. You can still:
+✅ Manage your account
+✅ View transactions (cached)
+✅ Check balances
+✅ Access audit logs
+"""
+            
+            return QueryResponse(
+                status="DEGRADED",
+                final_response=response_text,
+                agent_outputs={
+                    "mode": "fallback",
+                    "reason": "API key permission denied",
+                    "recommendation": "Update your Google Gemini API key"
+                },
+                risk_level="low",
+                requires_human=False,
+                audit_id=request.session_id,
+                customer_id=request.customer_id or "unknown",
+                latency_ms=None
+            )
+        
         raise HTTPException(status_code=500, detail=f"Workflow execution failed: {str(e)}")
 
 @app.get("/audit/{session_id}")
