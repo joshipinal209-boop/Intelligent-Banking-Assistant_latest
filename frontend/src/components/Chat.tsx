@@ -81,7 +81,8 @@ export const Chat: React.FC<ChatProps> = ({
                 borderRadius: '6px',
                 outline: 'none',
                 fontSize: '0.95rem',
-                minWidth: '280px',
+                minWidth: '320px',  // Increased from 280px to accommodate full names
+                maxWidth: '400px',
                 cursor: 'pointer',
                 fontWeight: '600',
                 transition: 'all 0.3s ease',
@@ -103,7 +104,9 @@ export const Chat: React.FC<ChatProps> = ({
                 e.currentTarget.style.background = 'linear-gradient(135deg, #161b22 0%, #0d1117 100%)';
               }}
             >
-              <option value="" style={{ background: '#161b22', color: '#8b949e' }}>📋 Select a Customer...</option>
+              <option value="" style={{ background: '#161b22', color: '#8b949e' }}>
+                📋 Select a Customer...
+              </option>
               {customers.map(c => (
                 <option 
                   key={c.customer_id} 
@@ -111,11 +114,15 @@ export const Chat: React.FC<ChatProps> = ({
                   style={{ 
                     background: '#161b22', 
                     color: '#c9d1d9',
-                    padding: '8px',
-                    borderRadius: '4px'
+                    padding: '10px 8px',
+                    borderRadius: '4px',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }}
+                  title={`${c.name} - ${c.customer_id}`}  // Full name visible on hover
                 >
-                  {c.name} ({c.customer_id})
+                  👤 {c.name}
                 </option>
               ))}
             </select>
