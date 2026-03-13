@@ -1,0 +1,64 @@
+{
+  "fraud_alerts": [
+    {
+      "alert_id": "ALRT9763",
+      "txn_id": "TXN77483205",
+      "reason": "Large Transaction",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT5752",
+      "txn_id": "TXN81913538",
+      "reason": "Unusual Location",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT9195",
+      "txn_id": "TXN95971493",
+      "reason": "High Frequency",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT8809",
+      "txn_id": "TXN87981452",
+      "reason": "Large Transaction",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT5110",
+      "txn_id": "TXN34745830",
+      "reason": "Unusual Location",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT1956",
+      "txn_id": "TXN26664866",
+      "reason": "Unusual Location",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT3794",
+      "txn_id": "TXN11028728",
+      "reason": "Unusual Location",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT6996",
+      "txn_id": "TXN79107519",
+      "reason": "High Frequency",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT2340",
+      "txn_id": "TXN89438373",
+      "reason": "Large Transaction",
+      "status": "Flagged"
+    },
+    {
+      "alert_id": "ALRT7752",
+      "txn_id": "TXN71368880",
+      "reason": "Large Transaction",
+      "status": "Flagged"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "compliance_reports": [
+    {
+      "report_id": "COMP539",
+      "customer_id": "dc43a761",
+      "status": "Review Required",
+      "category": "PEP Check"
+    },
+    {
+      "report_id": "COMP905",
+      "customer_id": "f8b29f66",
+      "status": "Review Required",
+      "category": "PEP Check"
+    },
+    {
+      "report_id": "COMP641",
+      "customer_id": "47ad0e60",
+      "status": "Review Required",
+      "category": "PEP Check"
+    },
+    {
+      "report_id": "COMP649",
+      "customer_id": "fa800b9e",
+      "status": "Review Required",
+      "category": "PEP Check"
+    },
+    {
+      "report_id": "COMP491",
+      "customer_id": "903fbf0e",
+      "status": "Review Required",
+      "category": "PEP Check"
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "loans": [
+    {
+      "loan_id": "LOAN1279",
+      "customer_id": "a137882f",
+      "type": "Home Loan",
+      "amount": 262099.61,
+      "interest_rate": 7.88,
+      "tenure_months": 60,
+      "emi": 41638.42,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN4738",
+      "customer_id": "17c85370",
+      "type": "Education Loan",
+      "amount": 1712898.88,
+      "interest_rate": 10.38,
+      "tenure_months": 120,
+      "emi": 46030.34,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN2139",
+      "customer_id": "03cea0fd",
+      "type": "Car Loan",
+      "amount": 577770.66,
+      "interest_rate": 7.76,
+      "tenure_months": 12,
+      "emi": 21418.07,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN4890",
+      "customer_id": "f8b29f66",
+      "type": "Personal Loan",
+      "amount": 876107.28,
+      "interest_rate": 11.52,
+      "tenure_months": 24,
+      "emi": 9909.5,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN5943",
+      "customer_id": "f6328555",
+      "type": "Home Loan",
+      "amount": 69449.46,
+      "interest_rate": 14.91,
+      "tenure_months": 12,
+      "emi": 31802.03,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN7514",
+      "customer_id": "bd81a1ab",
+      "type": "Education Loan",
+      "amount": 1579170.58,
+      "interest_rate": 9.2,
+      "tenure_months": 12,
+      "emi": 36452.91,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN1968",
+      "customer_id": "903fbf0e",
+      "type": "Car Loan",
+      "amount": 449186.0,
+      "interest_rate": 14.24,
+      "tenure_months": 36,
+      "emi": 33091.15,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN5900",
+      "customer_id": "dc43a761",
+      "type": "Home Loan",
+      "amount": 1317952.54,
+      "interest_rate": 14.81,
+      "tenure_months": 24,
+      "emi": 45015.4,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN5220",
+      "customer_id": "423a8ef0",
+      "type": "Personal Loan",
+      "amount": 1459169.55,
+      "interest_rate": 12.57,
+      "tenure_months": 36,
+      "emi": 31455.95,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8965",
+      "customer_id": "17c85370",
+      "type": "Personal Loan",
+      "amount": 1668895.72,
+      "interest_rate": 12.26,
+      "tenure_months": 60,
+      "emi": 20412.37,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8096",
+      "customer_id": "bd1c2866",
+      "type": "Personal Loan",
+      "amount": 350116.57,
+      "interest_rate": 11.46,
+      "tenure_months": 24,
+      "emi": 45343.27,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN5508",
+      "customer_id": "8ad11e49",
+      "type": "Personal Loan",
+      "amount": 391014.62,
+      "interest_rate": 8.22,
+      "tenure_months": 60,
+      "emi": 34853.36,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN1803",
+      "customer_id": "efef9ac8",
+      "type": "Home Loan",
+      "amount": 930298.31,
+      "interest_rate": 7.64,
+      "tenure_months": 36,
+      "emi": 43328.87,
+      "status": "Closed",
+      "risk_flag": true
+    },
+    {
+      "loan_id": "LOAN2021",
+      "customer_id": "efef9ac8",
+      "type": "Education Loan",
+      "amount": 242930.47,
+      "interest_rate": 9.39,
+      "tenure_months": 36,
+      "emi": 21245.59,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN5809",
+      "customer_id": "fa800b9e",
+      "type": "Personal Loan",
+      "amount": 1269889.33,
+      "interest_rate": 8.12,
+      "tenure_months": 12,
+      "emi": 14249.86,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN5846",
+      "customer_id": "7dec8802",
+      "type": "Personal Loan",
+      "amount": 833830.07,
+      "interest_rate": 8.8,
+      "tenure_months": 120,
+      "emi": 36971.16,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN2678",
+      "customer_id": "011652c9",
+      "type": "Home Loan",
+      "amount": 394135.85,
+      "interest_rate": 7.65,
+      "tenure_months": 36,
+      "emi": 11578.98,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN2254",
+      "customer_id": "40e5f075",
+      "type": "Home Loan",
+      "amount": 714198.41,
+      "interest_rate": 14.46,
+      "tenure_months": 24,
+      "emi": 43435.32,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8495",
+      "customer_id": "423a8ef0",
+      "type": "Personal Loan",
+      "amount": 870436.62,
+      "interest_rate": 10.36,
+      "tenure_months": 120,
+      "emi": 42823.06,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN9045",
+      "customer_id": "a871a66f",
+      "type": "Education Loan",
+      "amount": 1973796.21,
+      "interest_rate": 10.6,
+      "tenure_months": 120,
+      "emi": 26620.79,
+      "status": "Default",
+      "risk_flag": true
+    },
+    {
+      "loan_id": "LOAN3653",
+      "customer_id": "47ad0e60",
+      "type": "Personal Loan",
+      "amount": 69742.61,
+      "interest_rate": 9.3,
+      "tenure_months": 36,
+      "emi": 22574.99,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN1852",
+      "customer_id": "9aa0c890",
+      "type": "Car Loan",
+      "amount": 140799.94,
+      "interest_rate": 10.73,
+      "tenure_months": 24,
+      "emi": 6186.72,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN4144",
+      "customer_id": "9aa0c890",
+      "type": "Education Loan",
+      "amount": 1769381.51,
+      "interest_rate": 9.03,
+      "tenure_months": 24,
+      "emi": 12178.79,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN9526",
+      "customer_id": "9aa0c890",
+      "type": "Home Loan",
+      "amount": 1048384.16,
+      "interest_rate": 9.35,
+      "tenure_months": 12,
+      "emi": 21478.66,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN6569",
+      "customer_id": "b397c07b",
+      "type": "Personal Loan",
+      "amount": 1539764.0,
+      "interest_rate": 14.55,
+      "tenure_months": 120,
+      "emi": 31922.66,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN9618",
+      "customer_id": "8ad11e49",
+      "type": "Education Loan",
+      "amount": 1464352.74,
+      "interest_rate": 11.94,
+      "tenure_months": 60,
+      "emi": 35050.95,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8591",
+      "customer_id": "c455357b",
+      "type": "Personal Loan",
+      "amount": 1091664.44,
+      "interest_rate": 10.16,
+      "tenure_months": 36,
+      "emi": 8269.53,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8026",
+      "customer_id": "bd81a1ab",
+      "type": "Car Loan",
+      "amount": 1226175.7,
+      "interest_rate": 7.7,
+      "tenure_months": 120,
+      "emi": 18991.02,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN1321",
+      "customer_id": "3e415cda",
+      "type": "Car Loan",
+      "amount": 667907.29,
+      "interest_rate": 14.11,
+      "tenure_months": 24,
+      "emi": 31508.03,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8908",
+      "customer_id": "d4adb1f5",
+      "type": "Education Loan",
+      "amount": 401699.49,
+      "interest_rate": 8.65,
+      "tenure_months": 60,
+      "emi": 23956.22,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN8009",
+      "customer_id": "fa800b9e",
+      "type": "Home Loan",
+      "amount": 1791789.28,
+      "interest_rate": 9.68,
+      "tenure_months": 24,
+      "emi": 46294.59,
+      "status": "Default",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN7392",
+      "customer_id": "423a8ef0",
+      "type": "Education Loan",
+      "amount": 469420.1,
+      "interest_rate": 8.56,
+      "tenure_months": 120,
+      "emi": 47294.83,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN3091",
+      "customer_id": "2f22dc7d",
+      "type": "Personal Loan",
+      "amount": 694508.39,
+      "interest_rate": 9.26,
+      "tenure_months": 60,
+      "emi": 20673.27,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN4956",
+      "customer_id": "f8b29f66",
+      "type": "Car Loan",
+      "amount": 226994.78,
+      "interest_rate": 10.55,
+      "tenure_months": 24,
+      "emi": 21575.72,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN6569",
+      "customer_id": "7dec8802",
+      "type": "Education Loan",
+      "amount": 1760566.87,
+      "interest_rate": 11.01,
+      "tenure_months": 24,
+      "emi": 15009.84,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN4491",
+      "customer_id": "7a152343",
+      "type": "Education Loan",
+      "amount": 1721884.32,
+      "interest_rate": 13.5,
+      "tenure_months": 120,
+      "emi": 47570.37,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN6693",
+      "customer_id": "8be93fde",
+      "type": "Car Loan",
+      "amount": 1127645.77,
+      "interest_rate": 10.26,
+      "tenure_months": 60,
+      "emi": 6188.25,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN1821",
+      "customer_id": "e920db95",
+      "type": "Education Loan",
+      "amount": 233050.01,
+      "interest_rate": 13.65,
+      "tenure_months": 120,
+      "emi": 37522.58,
+      "status": "Closed",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN6087",
+      "customer_id": "efef9ac8",
+      "type": "Personal Loan",
+      "amount": 1813989.26,
+      "interest_rate": 8.58,
+      "tenure_months": 36,
+      "emi": 23630.38,
+      "status": "Active",
+      "risk_flag": false
+    },
+    {
+      "loan_id": "LOAN3085",
+      "customer_id": "efee6da0",
+      "type": "Education Loan",
+      "amount": 1483846.24,
+      "interest_rate": 11.76,
+      "tenure_months": 60,
+      "emi": 49281.38,
+      "status": "Active",
+      "risk_flag": false
+    }
+  ],
+  "credit_scores": [
+    {
+      "customer_id": "cc3bfa78",
+      "score": 823
+    },
+    {
+      "customer_id": "bd1c2866",
+      "score": 819
+    },
+    {
+      "customer_id": "fa800b9e",
+      "score": 518
+    },
+    {
+      "customer_id": "011652c9",
+      "score": 397
+    },
+    {
+      "customer_id": "ea43d360",
+      "score": 560
+    },
+    {
+      "customer_id": "7b134006",
+      "score": 338
+    },
+    {
+      "customer_id": "0027b73f",
+      "score": 666
+    },
+    {
+      "customer_id": "a0444b9d",
+      "score": 363
+    },
+    {
+      "customer_id": "7dec8802",
+      "score": 771
+    },
+    {
+      "customer_id": "423a8ef0",
+      "score": 414
+    },
+    {
+      "customer_id": "faba17d6",
+      "score": 410
+    },
+    {
+      "customer_id": "34773602",
+      "score": 330
+    },
+    {
+      "customer_id": "903fbf0e",
+      "score": 502
+    },
+    {
+      "customer_id": "7f594374",
+      "score": 389
+    },
+    {
+      "customer_id": "c455357b",
+      "score": 632
+    },
+    {
+      "customer_id": "b397c07b",
+      "score": 843
+    },
+    {
+      "customer_id": "1e300c68",
+      "score": 678
+    },
+    {
+      "customer_id": "c0d9d9ff",
+      "score": 372
+    },
+    {
+      "customer_id": "fb6113af",
+      "score": 803
+    },
+    {
+      "customer_id": "94b581b3",
+      "score": 789
+    },
+    {
+      "customer_id": "3e415cda",
+      "score": 388
+    },
+    {
+      "customer_id": "8be93fde",
+      "score": 610
+    },
+    {
+      "customer_id": "bd81a1ab",
+      "score": 788
+    },
+    {
+      "customer_id": "eda096e0",
+      "score": 445
+    },
+    {
+      "customer_id": "a871a66f",
+      "score": 391
+    },
+    {
+      "customer_id": "d4adb1f5",
+      "score": 388
+    },
+    {
+      "customer_id": "47ad0e60",
+      "score": 850
+    },
+    {
+      "customer_id": "9aa0c890",
+      "score": 644
+    },
+    {
+      "customer_id": "8d8bcf7a",
+      "score": 541
+    },
+    {
+      "customer_id": "01e1d129",
+      "score": 626
+    },
+    {
+      "customer_id": "efef9ac8",
+      "score": 694
+    },
+    {
+      "customer_id": "f6328555",
+      "score": 770
+    },
+    {
+      "customer_id": "bfdbbcff",
+      "score": 801
+    },
+    {
+      "customer_id": "f8b29f66",
+      "score": 624
+    },
+    {
+      "customer_id": "f444529f",
+      "score": 701
+    },
+    {
+      "customer_id": "efee6da0",
+      "score": 604
+    },
+    {
+      "customer_id": "227e57b2",
+      "score": 619
+    },
+    {
+      "customer_id": "2466e96f",
+      "score": 326
+    },
+    {
+      "customer_id": "dc43a761",
+      "score": 662
+    },
+    {
+      "customer_id": "141f6eeb",
+      "score": 372
+    },
+    {
+      "customer_id": "17c85370",
+      "score": 449
+    },
+    {
+      "customer_id": "8ad11e49",
+      "score": 601
+    },
+    {
+      "customer_id": "e920db95",
+      "score": 381
+    },
+    {
+      "customer_id": "03cea0fd",
+      "score": 629
+    },
+    {
+      "customer_id": "81c1cd9a",
+      "score": 700
+    },
+    {
+      "customer_id": "a137882f",
+      "score": 518
+    },
+    {
+      "customer_id": "9a068604",
+      "score": 433
+    },
+    {
+      "customer_id": "40e5f075",
+      "score": 788
+    },
+    {
+      "customer_id": "2f22dc7d",
+      "score": 410
+    },
+    {
+      "customer_id": "7a152343",
+      "score": 835
+    }
+  ]
+}

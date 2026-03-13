@@ -1,0 +1,54 @@
+graph TD
+    Client["User / Client (API)"] -- "POST /query" --> FAST["FastAPI Application (app.py)"]
+    
+    subgraph "Orchestration Layer (LangGraph)"
+        LG["Graph Runtime (main_graph.py)"]
+        Router["Router Node"]
+        AccAgent["Account Agent"]
+        LoanAgent["Loan Agent"]
+        FraudAgent["Fraud Agent"]
+        CompAgent["Compliance Agent"]
+        Aggregator["Aggregator Node"]
+    end
+
+    FAST -- "Invoke Graph" --> LG
+    LG --> Router
+    Router -- "Conditional Routing" --> AccAgent
+    Router -- "Conditional Routing" --> LoanAgent
+    Router -- "Conditional Routing" --> FraudAgent
+    Router -- "Conditional Routing" --> CompAgent
+    
+    AccAgent --> Aggregator
+    LoanAgent --> Aggregator
+    CompAgent --> Aggregator
+    FraudAgent -- "Risk Assessment" --> Aggregator
+    
+    Aggregator -- "Final Response" --> LG
+    LG -- "Result" --> FAST
+    
+    subgraph "Tools & Data Services (MCP / Knowledge)"
+        CoreMCP["Core Banking MCP (Port 8001)"]
+        CreditMCP["Credit MCP (Port 8002)"]
+        FraudMCP["Fraud MCP (Port 8003)"]
+        ComplianceMCP["Compliance MCP (Port 8004)"]
+        VectorDB["Vector Store (ChromaDB)"]
+        KG["Knowledge Graph"]
+    end
+    
+    AccAgent <--> CoreMCP
+    LoanAgent <--> CreditMCP
+    FraudAgent <--> FraudMCP
+    CompAgent <--> ComplianceMCP
+    AccAgent & CompAgent & LoanAgent <--> VectorDB
+    AccAgent & CompAgent <--> KG
+
+    subgraph "Observability & Persistence"
+        Decorators["@time_node / @time_tool"]
+        AuditStore["SqliteAuditStore"]
+        AuditDB[("audit.db")]
+    end
+
+    Router & AccAgent & LoanAgent & FraudAgent & CompAgent & Aggregator -. "Decorated Timing" .-> Decorators
+    CoreMCP & CreditMCP & FraudMCP & ComplianceMCP -. "Decorated Timing" .-> Decorators
+    Decorators -- "Log Events" --> AuditStore
+    AuditStore -- "Persist" --> AuditDB

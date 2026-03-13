@@ -1,0 +1,18 @@
+erDiagram
+    AUDIT_TRAIL {
+        int id PK "Auto-increment"
+        string session_id FK "Session Identifier"
+        string event_type "NODE_START, NODE_END, MCP_CALL, etc."
+        string node_name "Name of agent or tool"
+        json details "Metadata blob (JSON)"
+        float duration_ms "Execution latency"
+        datetime timestamp "Event created time"
+    }
+
+    SESSION_STATE {
+        string session_id PK "UUID"
+        string thread_id "LangGraph Thread"
+        json checkpoint "Binary/JSON serialized state"
+    }
+
+    AUDIT_TRAIL ||--o| SESSION_STATE : "references"

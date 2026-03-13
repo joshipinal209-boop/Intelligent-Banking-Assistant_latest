@@ -1,0 +1,121 @@
+# Environment variables (CRITICAL - DO NOT COMMIT)
+.env
+.env.local
+.env.*.local
+.env.prod
+.env.test
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+.venv/
+venv_backup/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+*.iml
+
+# Node/Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env.local
+frontend/.env.*.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Test & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.deepeval/
+.tox/
+coverage.xml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+data/vector/chroma/*
+!data/vector/chroma/.gitkeep
+
+# Logs
+*.log
+nohup.out
+core.log
+app.log
+fraud.log
+compliance.log
+credit.log
+frontend.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+.DS_Store
+*.swp
+
+# OS specific
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# JSON test/verification files (optional - remove if needed for CI)
+final_success.json
+final_verify.json
+final_verify_v2.json
+verification_result.json
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Cache
+.cache/
+*.cache
